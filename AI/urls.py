@@ -20,7 +20,7 @@ from . import view
 from rest_framework import permissions
 from django.conf.urls import url
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
-
+from users import views as users_views
 
 
 
@@ -37,4 +37,5 @@ urlpatterns = [
     # Optional UI:
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path('api/register/', users_views.Register.as_view(), name='register'),
 ]
